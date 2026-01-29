@@ -1,0 +1,179 @@
+:root {
+    --main-black-rgb: rgb(14, 1, 50);
+    --main-black-trans: rgba(14, 1, 30, 0.6);
+    --sec-black:rgba(26, 2, 50);
+    --sec-black-trans: rgba(26, 2, 50, 0.67);
+    --beige: rgb(255, 255, 173);
+    --dark-beige: rgb(128, 84, 55);
+}
+body{
+    margin: 0%;
+    background: rgb(209, 238, 255);
+    font-family: popjoy;
+    position: relative;
+    font-size: clamp(0.7rem, 0.4964rem + 0.7869vw, 1rem);
+}
+marquee{
+    margin: 1vh 0 1vh 0;
+    background-color: var(--sec-black-trans);
+    color: white;
+    padding: 0.2rem;
+}
+#bgvideo{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+}
+
+/*mid*/
+#mid{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:90vh;
+    justify-content: center; 
+    align-items: center;
+}
+
+.miditem {
+    flex: 1;
+    margin: 0%;
+}
+.item-l, .item-r, .item-m{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    /*snail*/
+        #snailguy img{
+            width: 18rem;
+            height: 18rem;
+            filter: drop-shadow( 0px 3px 2px var(--sec-black-trans) );
+        }
+
+    /*mid socials*/
+        #socialscontainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 18rem;
+            margin: 0 auto;
+            background: linear-gradient(180deg, var(--main-black-rgb) 0%, var(--sec-black-trans) 100%);
+            padding: 1.4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+            box-shadow: 0px 3px 0px var(--sec-black), 0px 3px 0px rgba(161, 74, 255, 0.497) inset;
+        }
+        .socialitem {
+            max-width: 80px;
+            max-height: 80px;
+            display: flex;
+            filter: drop-shadow( 0px 3px 5px var(--main-black-rgb) );
+            transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .socialitem:hover{
+                 transform: scale(1.1);
+                 filter: drop-shadow( 0px 5px 8px #000);
+            }
+    /*find me!*/
+    #findme{
+        width: auto;
+        height: 15vh;
+    }
+    .item-m p{
+        font-size: 1rem;
+        margin: 0.2rem;
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    /*r*/
+
+        .caderno {
+            width: 23vw;
+            height: 60vh;
+            padding: 0.4rem;
+            background-color: var(--beige);
+            /*box-shadow: 0 0 10px rgba(109, 16, 16, 0.5) inset;*/
+            box-shadow: rgba(15, 15, 74, 0.337) 0px 50px 100px -20px,
+             rgba(23, 6, 34, 0.668) 0px 30px 60px -30px,
+              rgb(255, 199, 149) 0px -2px 12px 6px inset;
+            border-radius: 1rem;
+            border: 2px solid var(--dark-beige);
+            overflow-y: scroll;
+            scrollbar-color: var(--dark-beige) transparent;
+            scrollbar-width: thin;
+        }
+        .cadernotxt p{
+            line-height: 2em;
+            text-decoration-line: underline;
+            text-decoration-color: var(--dark-beige);
+            text-decoration-thickness: 0.1em;
+        }
+        .cadernotxt h2{
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--dark-beige);
+            text-decoration-thickness: 0.071em;
+        }
+
+/*mid mobile*/
+    @media (max-width: 768px){
+        #mid{
+            flex-wrap: wrap;
+
+        .item-m {
+            flex: 1 0 100%;
+            order: 1;
+        }
+
+        .item-l {
+            flex: 1;
+            order: 2;
+        }
+
+        .item-r {
+            flex: 1;
+            order: 3;
+        }
+    }
+        #snailguy img{
+            width: 10rem;
+            height: 10rem;
+            background-color: #3498db;
+            }
+        .caderno {
+            width: 40vw;
+            height: 32vh;
+            padding: 0.4rem;
+        }
+    }
+#footdiv{
+    background: linear-gradient(180deg, var(--sec-black-trans) 0%, var(--main-black-rgb) 100%);
+    text-align: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+            --mask:
+    radial-gradient(2.24rem at 50% 3rem,#000 99%,#0000 101%) calc(50% - 2rem) 0/4rem 100%,
+    radial-gradient(2.24rem at 50% -2rem,#0000 99%,#000 101%) 50% 1rem/4rem 100% repeat-x;
+            -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+    #footdiv p {
+    color: white;
+    margin: 0.4rem 0 0 0;
+    font-size: 0.9rem;
+    }
+
+::-webkit-scrollbar{
+    background-color: var(--sec-black);
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-black-rgb)
+}
